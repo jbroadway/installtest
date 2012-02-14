@@ -1,11 +1,8 @@
 <?php
 
-$page->layout = 'admin';
+$this->require_admin ();
 
-if (! User::require_admin ()) {
-	header ('Location: /admin');
-	exit;
-}
+$page->layout = 'admin';
 
 if ($this->installed ('installtest', $appconf['Admin']['version']) === true) {
 	$page->title = 'Already up-to-date';
@@ -14,6 +11,8 @@ if ($this->installed ('installtest', $appconf['Admin']['version']) === true) {
 }
 
 $page->title = 'Upgrading app: installtest';
+
+// Do your upgrade work here
 
 echo '<p>Done.</p>';
 
