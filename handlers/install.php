@@ -1,11 +1,8 @@
 <?php
 
-$page->layout = 'admin';
+$this->require_admin ();
 
-if (! User::require_admin ()) {
-	header ('Location: /admin');
-	exit;
-}
+$page->layout = 'admin';
 
 $cur = $this->installed ('installtest', $appconf['Admin']['version']);
 
@@ -14,11 +11,12 @@ if ($cur === true) {
 	echo '<p><a href="/">Home</a></p>';
 	return;
 } elseif ($cur !== false) {
-	header ('Location: /' . $appconf['Admin']['upgrade']);
-	exit;
+	$this->redirect ('/' . $appconf['Admin']['upgrade']);
 }
 
 $page->title = 'Installing app: installtest';
+
+// Do your install work here
 
 echo '<p>Done.</p>';
 
