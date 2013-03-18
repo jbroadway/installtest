@@ -14,7 +14,7 @@ if ($cur === true) {
 	$this->redirect ('/' . $appconf['Admin']['upgrade']);
 }
 
-$page->title = 'Installing app: installtest';
+$page->title = 'Installing App: Install Test';
 
 // Do your install work here
 

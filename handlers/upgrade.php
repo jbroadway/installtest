@@ -10,7 +10,7 @@ if ($this->installed ('installtest', $appconf['Admin']['version']) === true) {
 	return;
 }
 
-$page->title = 'Upgrading app: installtest';
+$page->title = 'Upgrading App: Install Test';
 
 // Do your upgrade work here
 

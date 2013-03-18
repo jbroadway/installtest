@@ -2,10 +2,7 @@
 
 $page->layout = 'admin';
 
-if (! User::require_admin ()) {
-	header ('Location: /admin');
-	exit;
-}
+$this->require_admin ();
 
 $page->title = 'Install Test';
 
